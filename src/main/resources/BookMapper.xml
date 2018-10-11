@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="example.dao.BookDAO">
+    <!--多表查询配置-->
+    <resultMap id="queryList" type="example.pojo.Book">
+        <!--column指向数据库字段，property指向bean属性-->
+        <id column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="price" property="price" />
+        <result column="publishDate" property="publishDate"/>
+        <collection property="sort" javaType="java.util.List" ofType="example.pojo.Book_sort">
+            <id column="sid" property="sid" />
+            <result column="sortName" property="sortName" />
+        </collection>
+
+    </resultMap>
+
+    <select id="queryList" resultMap="queryList">
+        SELECT
+	info.id,
+	info.title,
+	info.price,
+	info.publishDate,
+	sort.sortName,
+	info.sid
+FROM
+	book_info AS info,
+	book_sort AS sort
+WHERE
+	info.sid = sort.sid;
+    </select>
+    
+    
+    <!--获取所有图书-->
+    <select id="getAllBooks" resultType="book">
+        select id,title,price,publishDate from book_info
+    </select>
+    <!--通过图书编号获取图书-->
+    <select id="getBookById" resultType="book">
+        select id,title,price,publishDate from book_info where id = #{id}
+    </select>
+    <!--增加图书-->
+    <insert id="add">
+        insert into book_info(title,price,publishDate) values (#{title},#{price},#{publishDate})
+    </insert>
+    <!--删除-->
+    <delete id="delete">
+        delete from book_info where id = #{id}
+    </delete>
+    <!--更新-->
+    <update id="update">
+        update book_info set title=#{title},price=#{price},publishDate=#{publishDate} where id=#{id}
+    </update>
+
+</mapper>

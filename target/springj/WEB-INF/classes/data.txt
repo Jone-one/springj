@@ -1,0 +1,40 @@
+log4j.rootLogger=INFO,stdout,R
+
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+log4j.appender.stdout.layout.ConversionPattern=[ims] %d{yy-MM-dd HH:mm:ss:SSSS} %p %C{1}.%M(%L) | %m%n
+
+log4j.appender.R=org.apache.log4j.RollingFileAppender
+log4j.appender.R.File=G:/log.log
+log4j.appender.R.MaxFileSize=1024KB
+log4j.appender.R.MaxBackupIndex=50
+log4j.appender.R.layout=org.apache.log4j.PatternLayout
+log4j.appender.R.layout.ConversionPattern=[ims] %d{yy-MM-dd HH:mm:ss:SSSS} %p %C{1}.%M(%L) | %m%n
+
+
+log4j.logger.ims=DEBUG
+log4j.logger.tems=DEBUG
+log4j.logger.com=DEBUG
+log4j.logger.com.mybatis=DEBUG
+
+log4j.logger.com.opensymphony.oscache=INFO
+log4j.logger.net.sf.navigator=ERROR
+log4j.logger.org.apache.commons=ERROR
+log4j.logger.org.displaytag=ERROR
+log4j.logger.org.springframework=WARN
+log4j.logger.com.mybatis.db=DEBUG
+log4j.logger.org.mybatis=DEBUG
+log4j.logger.java.sql.Connection=DEBUG
+log4j.logger.java.sql.Statement=DEBUG
+log4j.logger.java.sql.PreparedStatement=DEBUG
+log4j.logger.java.sql.ResultSet=DEBUG
+
+log4j.logger.org.apache.velocity=FATAL
+log4j.logger.com.opensymphony.xwork2=INFO
+log4j.logger.com.opensymphony.xwork2.util.finder=INFO
+
+#for jsp
+log4j.logger.org.apache.jasper.servlet=OFF
+log4j.logger.org.apache.catalina.core=OFF
+
+log4j.logger.example.dao=DEBUG
