@@ -6,11 +6,11 @@
         <!--column指向数据库字段，property指向bean属性-->
         <id column="id" property="id"/>
         <result column="title" property="title"/>
-        <result column="price" property="price" />
+        <result column="price" property="price"/>
         <result column="publishDate" property="publishDate"/>
         <collection property="sort" javaType="java.util.List" ofType="example.pojo.Book_sort">
-            <id column="sid" property="sid" />
-            <result column="sortName" property="sortName" />
+            <id column="sid" property="sid"/>
+            <result column="sortName" property="sortName"/>
         </collection>
 
     </resultMap>
@@ -29,8 +29,8 @@ FROM
 WHERE
 	info.sid = sort.sid;
     </select>
-    
-    
+
+
     <!--获取所有图书-->
     <select id="getAllBooks" resultType="book">
         select id,title,price,publishDate from book_info

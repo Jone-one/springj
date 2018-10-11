@@ -1,6 +1,6 @@
 package example.pojo;
 
-public class redisBean {
+public class RedisBean {
     private String key;
     private String value;
 

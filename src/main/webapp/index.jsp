@@ -4,8 +4,9 @@
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <%@page pageEncoding="UTF-8" contentType="text/html; utf-8" language="java" %>
 
-    <title>这是index</title>
+    <title>欢迎页面</title>
 </head>
 <script src="/statics/js/jquery-1.11.1.min.js"></script>
 

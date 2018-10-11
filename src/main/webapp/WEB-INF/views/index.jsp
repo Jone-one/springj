@@ -43,7 +43,7 @@
                  );*/
             $.ajax({
                 type: "POST",
-                url: "../setRedis",
+                url: "./addRedis",
                 data: data,
                 dataType: "json",
                 contentType: "application/json",

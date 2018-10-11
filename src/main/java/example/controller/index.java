@@ -1,7 +1,7 @@
 package example.controller;
 
 import example.pojo.Book;
-import example.pojo.redisBean;
+import example.pojo.RedisBean;
 import example.service.BookService;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
@@ -17,6 +17,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 @Controller
 @RequestMapping("/home")
@@ -49,7 +50,7 @@ public class index {
 
     @RequestMapping(value = "/setRedis", method = RequestMethod.POST)
     public @ResponseBody
-    Map<String, String> redis(@RequestBody redisBean redisBean) throws UnsupportedEncodingException {
+    Map<String, String> redis(@RequestBody RedisBean redisBean) throws UnsupportedEncodingException {
         System.out.println("post数据传递**********：" + redisBean.getKey() + ":" + redisBean.getValue());
         ValueOperations valueOperations = redisTemplate.opsForValue();
         if (valueOperations == null) {
@@ -60,6 +61,18 @@ public class index {
         Map<String, String> map = new HashMap<>();
         map.put("info", "success");
         return map;
+    }
+
+    @RequestMapping("/getRedis")
+    public @ResponseBody HashMap<String,Object> getRedis(){
+        Set<String> stringSet = redisTemplate.keys("*");
+        HashMap<String,Object> hashMap = new HashMap<>();
+        for (String key : stringSet){
+            Object value = redisTemplate.opsForValue().get(key);
+            hashMap.put(key,value);
+            System.out.println("key:"+key+"   value:"+value);
+        }
+        return hashMap;
     }
 
     @RequestMapping("/redis")
