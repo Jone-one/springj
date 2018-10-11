@@ -10,9 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6153f59e-ee9d-4aba-b953-0ba9fa3d2b85" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/example/controller/myredis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/example/controller/myredis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/example/controller/myredis.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -121,17 +119,12 @@
       <file leaf-file-name="myredis.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/example/controller/myredis.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="44" lean-forward="true" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InternalResourceViewResolver.java" pinned="false" current-in-tab="false">
-        <entry file="jar://F:/apache-maven-3.5.2/localRepository/org/springframework/spring-webmvc/5.1.0.RELEASE/spring-webmvc-5.1.0.RELEASE-sources.jar!/org/springframework/web/servlet/view/InternalResourceViewResolver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1729">
-              <caret line="110" selection-start-line="110" selection-end-line="110" />
+            <state relative-caret-position="76">
+              <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+              <folding>
+                <element signature="e#95#96#0" expanded="true" />
+                <element signature="e#131#132#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -797,8 +790,16 @@
       <workItem from="1539070415397" duration="6394000" />
       <workItem from="1539134234025" duration="8375000" />
       <workItem from="1539219052608" duration="621000" />
-      <workItem from="1539225429202" duration="557000" />
+      <workItem from="1539225429202" duration="1207000" />
     </task>
+    <task id="LOCAL-00001" summary="idea commit">
+      <created>1539226131215</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1539226131230</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -834,7 +835,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="262906000" />
+    <option name="totallyTimeSpent" value="263556000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -847,9 +848,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="2" />
-      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50378215" side_tool="true" weight="0.4106583" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50378215" side_tool="true" visible="true" weight="0.3291536" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.3291536" />
       <window_info anchor="right" id="Maven Projects" order="6" weight="0.32980332" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
@@ -865,12 +867,13 @@
       <window_info id="Image Layers" order="0" />
       <window_info anchor="bottom" id="Java Enterprise" order="14" weight="0.3291536" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
-      <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49621785" visible="true" weight="0.3291536" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49621785" weight="0.38557994" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.3291536" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3291536" />
       <window_info active="true" content_ui="combo" x="513" y="154" width="340" height="429" id="Project" order="2" sideWeight="0.48657718" visible="true" weight="0.21331316" />
       <window_info id="Web" order="7" sideWeight="0.51342285" side_tool="true" weight="0.20121029" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3291536" />
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="right" id="Mongo Explorer" order="9" />
@@ -882,17 +885,64 @@
       <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.30181542" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3291536" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="idea commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="idea commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1264,8 +1314,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/example/controller/myredis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="44" lean-forward="true" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+        <state relative-caret-position="76">
+          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+          <folding>
+            <element signature="e#95#96#0" expanded="true" />
+            <element signature="e#131#132#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
