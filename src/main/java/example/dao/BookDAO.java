@@ -5,12 +5,15 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
 @Repository
 public interface BookDAO {
 
-    public  List<Book> queryList();
+    public List<Book> queryList();
+
     /**
      * 获取所有图书
+     *
      * @return
      */
     public List<Book> getAllBooks();
@@ -24,10 +27,12 @@ public interface BookDAO {
      * 添加图书
      */
     public int add(Book book);
+
     /**
-     *根据id 删除图书
+     * 根据id 删除图书
      */
     public int delete(int id);
+
     /**
      * 更新图书
      */

@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.alibaba.com/schema/stat"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.alibaba.com/schema/stat http://www.alibaba.com/schema/stat.xsd">
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<!--    &lt;!&ndash;配置c3p0数据源&ndash;&gt;
-    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
-        &lt;!&ndash;驱动类名&ndash;&gt;
-        <property name="driverClass" value="${jdbc.driver}" />
-        &lt;!&ndash;url&ndash;&gt;
-        <property name="jdbcUrl" value="${jdbc.url}" />
-        &lt;!&ndash;用户名&ndash;&gt;
-        <property name="user" value="${jdbc.uid}" />
-        &lt;!&ndash;密码&ndash;&gt;
-        <property name="password" value="${jdbc.pwd}" />
-        &lt;!&ndash;连接池新获取连接数&ndash;&gt;
-        <property name="acquireIncrement" value="${jdbc.acquireIncrement}" />
-        &lt;!&ndash;初始连接池大小&ndash;&gt;
-        <property name="initialPoolSize" value="${jdbc.initialPoolSize}" />
-        &lt;!&ndash;连接池最小连接数&ndash;&gt;
-        <property name="minPoolSize" value="${jdbc.minPoolSize}" />
-        &lt;!&ndash;连接池最大连接数&ndash;&gt;
-        <property name="maxPoolSize" value="${jdbc.maxPoolSize}" />
-    </bean>-->
+    <!--    &lt;!&ndash;配置c3p0数据源&ndash;&gt;
+        <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+            &lt;!&ndash;驱动类名&ndash;&gt;
+            <property name="driverClass" value="${jdbc.driver}" />
+            &lt;!&ndash;url&ndash;&gt;
+            <property name="jdbcUrl" value="${jdbc.url}" />
+            &lt;!&ndash;用户名&ndash;&gt;
+            <property name="user" value="${jdbc.uid}" />
+            &lt;!&ndash;密码&ndash;&gt;
+            <property name="password" value="${jdbc.pwd}" />
+            &lt;!&ndash;连接池新获取连接数&ndash;&gt;
+            <property name="acquireIncrement" value="${jdbc.acquireIncrement}" />
+            &lt;!&ndash;初始连接池大小&ndash;&gt;
+            <property name="initialPoolSize" value="${jdbc.initialPoolSize}" />
+            &lt;!&ndash;连接池最小连接数&ndash;&gt;
+            <property name="minPoolSize" value="${jdbc.minPoolSize}" />
+            &lt;!&ndash;连接池最大连接数&ndash;&gt;
+            <property name="maxPoolSize" value="${jdbc.maxPoolSize}" />
+        </bean>-->
 
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
-        <property name="driverClassName" value="${jdbc.driver}" />
-        <property name="url" value="${jdbc.url}" />
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
         <property name="username" value="${jdbc.uid}"/>
         <property name="password" value="${jdbc.pwd}"/>
         <property name="initialSize" value="${jdbc.initialPoolSize}"/>
@@ -39,7 +38,8 @@
         <property name="testOnReturn" value="${jdbc.testOnReturn}"/>
         <property name="testOnBorrow" value="${jdbc.testOnBorrow}"/>
         <property name="poolPreparedStatements" value="${jdbc.poolPreparedStatements}"/>
-        <property name="maxPoolPreparedStatementPerConnectionSize" value="${jdbc.maxPoolPreparedStatmentPerConnectionSize}"/>
+        <property name="maxPoolPreparedStatementPerConnectionSize"
+                  value="${jdbc.maxPoolPreparedStatmentPerConnectionSize}"/>
         <property name="proxyFilters">
             <list>
                 <ref bean="logFilters"/>
@@ -55,15 +55,15 @@
         <!--数据源-->
         <property name="dataSource" ref="dataSource"/>
         <!--javabean别名-->
-        <property name="typeAliasesPackage" value="example.pojo" />
-        <property name="mapperLocations" value="classpath*:*Mapper.xml" />
+        <property name="typeAliasesPackage" value="example.pojo"/>
+        <property name="mapperLocations" value="classpath*:*Mapper.xml"/>
     </bean>
 
     <!--声明事务管理-->
 
     <!--自动扫描关系映射-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
-        <property name="basePackage" value="example.dao" />
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+        <property name="basePackage" value="example.dao"/>
     </bean>
 </beans>

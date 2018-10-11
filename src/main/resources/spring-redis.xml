@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.alibaba.com/schema/stat http://www.alibaba.com/schema/stat.xsd">
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--redis数据源-->
     <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
@@ -16,7 +16,8 @@
         <constructor-arg name="thePassword" value="${redis.password}"/>
     </bean>
     <!--redis连接工厂-->
-    <bean id="redisStandaloneConfiguration" class="org.springframework.data.redis.connection.RedisStandaloneConfiguration">
+    <bean id="redisStandaloneConfiguration"
+          class="org.springframework.data.redis.connection.RedisStandaloneConfiguration">
         <property name="hostName" value="${redis.host}"/>
         <property name="port" value="${redis.port}"/>
         <property name="password" ref="redisPassword"/>
@@ -24,7 +25,7 @@
     </bean>
     <!--spring-redis连接池管理-->
     <bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
-       <constructor-arg name="standaloneConfig" ref="redisStandaloneConfiguration"/>
+        <constructor-arg name="standaloneConfig" ref="redisStandaloneConfiguration"/>
     </bean>
     <!--手动设置key与value序列化方式-->
     <bean id="keySerializer" class="org.springframework.data.redis.serializer.StringRedisSerializer"/>

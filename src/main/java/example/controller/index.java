@@ -27,37 +27,43 @@ public class index {
     RedisTemplate redisTemplate;
 
     @RequestMapping("/index")
-    public  @ResponseBody String  indexx(){
+    public @ResponseBody
+    String indexx() {
         return "index";
     }
 
     @RequestMapping("/test")
-    public @ResponseBody List<Book> hello(){
+    public @ResponseBody
+    List<Book> hello() {
         List<Book> Books = bookService.queryList();
 
         return Books;
     }
 
-    @RequestMapping(value = "/json",method = RequestMethod.POST)
-    public @ResponseBody String json(){
+    @RequestMapping(value = "/json", method = RequestMethod.POST)
+    public @ResponseBody
+    String json() {
         String str = "{{name:liuyi,age:22},{sex:wwwman}}";
         return str;
     }
-    @RequestMapping(value = "/setRedis",method = RequestMethod.POST)
-    public @ResponseBody Map<String, String> redis(@RequestBody redisBean redisBean) throws UnsupportedEncodingException {
-        System.out.println("post数据传递**********："+redisBean.getKey()+":"+redisBean.getValue());
+
+    @RequestMapping(value = "/setRedis", method = RequestMethod.POST)
+    public @ResponseBody
+    Map<String, String> redis(@RequestBody redisBean redisBean) throws UnsupportedEncodingException {
+        System.out.println("post数据传递**********：" + redisBean.getKey() + ":" + redisBean.getValue());
         ValueOperations valueOperations = redisTemplate.opsForValue();
-        if(valueOperations==null){
+        if (valueOperations == null) {
             System.out.println("null+++++++++++++");
         }
-        valueOperations.set(redisBean.getKey(),redisBean.getValue());
-        System.out.println("存储redis后取值*****："+valueOperations.get(redisBean.getKey()));
-        Map<String,String> map = new HashMap<>();
-        map.put("info","success");
+        valueOperations.set(redisBean.getKey(), redisBean.getValue());
+        System.out.println("存储redis后取值*****：" + valueOperations.get(redisBean.getKey()));
+        Map<String, String> map = new HashMap<>();
+        map.put("info", "success");
         return map;
     }
+
     @RequestMapping("/redis")
-    public ModelAndView toHtml(){
+    public ModelAndView toHtml() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("index");
         return modelAndView;

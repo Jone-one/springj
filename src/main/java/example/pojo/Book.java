@@ -1,6 +1,5 @@
 package example.pojo;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -10,6 +9,22 @@ public class Book {
     private double price;
     private Date publishDate;
     private List<Book_sort> sort;
+
+    public Book(int id, String title, double price, Date publishDate) {
+        this.id = id;
+        this.title = title;
+        this.price = price;
+        this.publishDate = publishDate;
+    }
+
+    public Book(String title, double price, Date publishDate) {
+        this.title = title;
+        this.price = price;
+        this.publishDate = publishDate;
+    }
+
+    public Book() {
+    }
 
     public int getId() {
         return id;
@@ -49,22 +64,6 @@ public class Book {
 
     public void setSort(List<Book_sort> sort) {
         this.sort = sort;
-    }
-
-    public Book(int id, String title, double price, Date publishDate) {
-        this.id = id;
-        this.title = title;
-        this.price = price;
-        this.publishDate = publishDate;
-    }
-
-    public Book(String title, double price, Date publishDate) {
-        this.title = title;
-        this.price = price;
-        this.publishDate = publishDate;
-    }
-
-    public Book() {
     }
 
     @Override
