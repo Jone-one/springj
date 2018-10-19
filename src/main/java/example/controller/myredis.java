@@ -1,6 +1,7 @@
 package example.controller;
 
 import example.pojo.RedisBean;
+import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import redis.clients.jedis.Jedis;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -52,6 +54,19 @@ public class myredis {
             return true;
         }
         return false;
+    }
+
+    /*
+    查找Redis
+     */
+    @RequestMapping("/findRedis")
+    public @ResponseBody Map<String,Object> findRedis(@RequestBody String key){
+        if (key==null){
+            System.out.println("key为null***********");
+
+            return (Map<String, Object>)new HashMap<>().put("null",null);
+        }
+        return (Map<String, Object>) new HashMap<>().put("key",redisTemplate.opsForValue().get(key));
     }
 
 

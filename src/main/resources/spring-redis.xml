@@ -37,5 +37,6 @@
         <property name="valueSerializer" ref="valueSerializer"/>
         <property name="hashKeySerializer" ref="keySerializer"/>
         <property name="hashValueSerializer" ref="valueSerializer"/>
+        <property name="enableTransactionSupport" value="true" />
     </bean>
 </beans>
