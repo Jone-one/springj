@@ -30,7 +30,6 @@ public class mytest {
         Gson gson = new Gson();
         if (books != null)
             for (Book book : books) {
-
                 System.out.println(gson.toJson(book));
             }
     }
@@ -41,6 +40,7 @@ public class mytest {
         if (books != null) {
             for (Book book : books) {
                 System.out.println(book.toString());
+
             }
         }
     }

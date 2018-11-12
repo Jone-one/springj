@@ -10,6 +10,7 @@
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
+
     <!-- Spring MVC配置springmvc DispatcherServlet-->
     <servlet>
         <servlet-name>springMVC</servlet-name>
@@ -25,6 +26,11 @@
         <servlet-name>springMVC</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.html</url-pattern>
+    </servlet-mapping>
+
 
     <!-- Spring 把applicationContext.xml加入到配置文件中-->
     <context-param>
